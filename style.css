@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+button{
+    outline: none;
+    border: 3px solid black;
+}
+
 .navbar{
     font-family: 'Archivo Black', sans-serif;
     font-size: 30px;

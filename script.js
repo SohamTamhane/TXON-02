@@ -23,99 +23,97 @@ var lower_screen = document.getElementById('lower-screen');
 
 point_count=0;
 
-ac.addEventListener('click', function(){
-    lower_screen.innerHTML = "0";
-    upper_screen.innerHTML = "";
-    point_count=0;
-})
-
-c.addEventListener('click', function(){
-    lower_screen.innerHTML = "0";
-    point_count=0;
-})
-
-one.addEventListener('click', function(){
+function oneFunc(){
     if(lower_screen.innerHTML==="0"){
         lower_screen.innerHTML = "1";    
     }
     else{
         lower_screen.innerHTML += "1";
     }
-})
-two.addEventListener('click', function(){
+}
+function twoFunc(){
     if(lower_screen.innerHTML==="0"){
         lower_screen.innerHTML = "2";    
     }
     else{
         lower_screen.innerHTML += "2";
     }
-})
-three.addEventListener('click', function(){
+}
+function threeFunc(){
     if(lower_screen.innerHTML==="0"){
         lower_screen.innerHTML = "3";    
     }
     else{
         lower_screen.innerHTML += "3";
     }
-})
-four.addEventListener('click', function(){
+}
+function fourFunc(){
     if(lower_screen.innerHTML==="0"){
         lower_screen.innerHTML = "4";    
     }
     else{
         lower_screen.innerHTML += "4";
     }
-})
-five.addEventListener('click', function(){
+}
+function fiveFunc(){
     if(lower_screen.innerHTML==="0"){
         lower_screen.innerHTML = "5";    
     }
     else{
         lower_screen.innerHTML += "5";
     }
-})
-six.addEventListener('click', function(){
+}
+function sixFunc(){
     if(lower_screen.innerHTML==="0"){
         lower_screen.innerHTML = "6";    
     }
     else{
         lower_screen.innerHTML += "6";
     }
-})
-seven.addEventListener('click', function(){
+}
+function sevenFunc(){
     if(lower_screen.innerHTML==="0"){
         lower_screen.innerHTML = "7";    
     }
     else{
         lower_screen.innerHTML += "7";
     }
-})
-eight.addEventListener('click', function(){
+}
+function eightFunc(){
     if(lower_screen.innerHTML==="0"){
         lower_screen.innerHTML = "8";    
     }
     else{
         lower_screen.innerHTML += "8";
     }
-})
-nine.addEventListener('click', function(){
+}
+function nineFunc(){
     if(lower_screen.innerHTML==="0"){
         lower_screen.innerHTML = "9";    
     }
     else{
         lower_screen.innerHTML += "9";
     }
-})
-zero.addEventListener('click', function(){
+}
+function zeroFunc(){
     if(lower_screen.innerHTML==="0"){
         lower_screen.innerHTML = "0";    
     }
     else{
         lower_screen.innerHTML += "0";
     }
-})
+}
+function acFunc(){
+    lower_screen.innerHTML = "0";
+    upper_screen.innerHTML = "";
+    point_count=0;
+}
+function cFunc(){
+    lower_screen.innerHTML = "0";
+    point_count=0;
+}
 
-add.addEventListener('click', function(){
+function addFunc(){
     if(upper_screen.innerHTML=="" || upper_screen.innerHTML=="0"){
         upper_screen.innerHTML = lower_screen.innerHTML+"+";
         lower_screen.innerHTML = "";
@@ -142,9 +140,8 @@ add.addEventListener('click', function(){
         }
     }
     point_count=0;
-})
-
-subtract.addEventListener('click', function(){
+}
+function subtractFunc(){
     if(upper_screen.innerHTML=="" || upper_screen.innerHTML=="0"){
         upper_screen.innerHTML = lower_screen.innerHTML+"-";
         lower_screen.innerHTML = "";
@@ -170,9 +167,9 @@ subtract.addEventListener('click', function(){
             lower_screen.innerHTML = "";
         }
     }
-})
-
-multiply.addEventListener('click', function(){
+    point_count=0;
+}
+function multiplyFunc(){
     if(upper_screen.innerHTML=="" || upper_screen.innerHTML=="0"){
         upper_screen.innerHTML = lower_screen.innerHTML+"x";
         lower_screen.innerHTML = "";
@@ -198,9 +195,9 @@ multiply.addEventListener('click', function(){
             lower_screen.innerHTML = "";
         }
     }
-})
-
-divide.addEventListener('click', function(){
+    point_count=0;
+}
+function divideFunc(){
     if(upper_screen.innerHTML=="" || upper_screen.innerHTML=="0"){
         upper_screen.innerHTML = lower_screen.innerHTML+"/";
         lower_screen.innerHTML = "";
@@ -226,9 +223,9 @@ divide.addEventListener('click', function(){
             lower_screen.innerHTML = "";
         }
     }
-})
-
-equals.addEventListener('click', function(){
+    point_count=0;
+}
+function equalsFunc(){
     if(upper_screen.innerHTML=="" || upper_screen.innerHTML=="0"){
         if(lower_screen.innerHTML!="" || lower_screen.innerHTML!="0"){
             lower_screen.innerHTML = lower_screen.innerHTML
@@ -258,9 +255,8 @@ equals.addEventListener('click', function(){
             upper_screen.innerHTML = "";
         }
     }
-})
-
-percent.addEventListener('click', function(){
+}
+function percentFunc(){
     if(upper_screen.innerHTML=="" || upper_screen.innerHTML=="0"){
         if(lower_screen.innerHTML!="" || lower_screen.innerHTML!="0"){
             var num1 = Number(lower_screen.innerHTML.slice(0, lower_screen.innerHTML.length));
@@ -273,11 +269,92 @@ percent.addEventListener('click', function(){
         lower_screen.innerHTML = String(num1*0.01);
         upper_screen.innerHTML = "";
     }
-})
-
-point.addEventListener('click', function(){
+}
+function pointFunc(){
     if(point_count===0){
         lower_screen.innerHTML += ".";
         point_count++;
+    }
+}
+ac.addEventListener('click', acFunc);
+c.addEventListener('click', cFunc);
+
+one.addEventListener('click', oneFunc);
+two.addEventListener('click', twoFunc);
+three.addEventListener('click', threeFunc);
+four.addEventListener('click', fourFunc);
+five.addEventListener('click', fiveFunc);
+six.addEventListener('click', sixFunc);
+seven.addEventListener('click', sevenFunc);
+eight.addEventListener('click', eightFunc);
+nine.addEventListener('click', nineFunc);
+zero.addEventListener('click', zeroFunc);
+
+add.addEventListener('click', addFunc);
+subtract.addEventListener('click', subtractFunc);
+multiply.addEventListener('click', multiplyFunc);
+divide.addEventListener('click', divideFunc);
+equals.addEventListener('click', equalsFunc);
+percent.addEventListener('click', percentFunc);
+point.addEventListener('click', pointFunc);
+
+// Keyboard Event
+window.addEventListener('keydown', function(event){
+    if(event.key === "1"){
+        oneFunc();
+    }
+    else if(event.key==="2"){
+        twoFunc();
+    }
+    else if(event.key==="3"){
+        threeFunc();
+    }
+    else if(event.key==="4"){
+        fourFunc();
+    }
+    else if(event.key==="5"){
+        fiveFunc();
+    }
+    else if(event.key==="6"){
+        sixFunc();
+    }
+    else if(event.key==="7"){
+        sevenFunc();
+    }
+    else if(event.key==="8"){
+        eightFunc();
+    }
+    else if(event.key==="9"){
+        nineFunc();
+    }
+    else if(event.key==="0"){
+        zeroFunc();
+    }
+    else if(event.key==="Escape"){
+        acFunc();
+    }
+    else if(event.key==="Backspace"){
+        cFunc();
+    }
+    else if(event.key==="+"){
+        addFunc();
+    }
+    else if(event.key==="-"){
+        subtractFunc();
+    }
+    else if(event.key==="*" || event.key==="x" || event.key==="X"){
+        multiplyFunc();
+    }
+    else if(event.key==="/"){
+        divideFunc();
+    }
+    else if(event.key==="=" || event.key==="Enter"){
+        equalsFunc();
+    }
+    else if(event.key==="%"){
+        percentFunc();
+    }
+    else if(event.key==="."){
+        pointFunc();
     }
 })
