@@ -8,7 +8,7 @@
 
 button{
     outline: none;
-    border: 3px solid black;
+    border: 2.5px solid black;
 }
 
 .navbar{
@@ -98,7 +98,7 @@ button{
 }
 
 #zero{
-    width: 140px;
+    width: 145px;
 }
 
 .grey-bg{
@@ -138,4 +138,29 @@ footer {
     font-size: 15px;
     padding: 5px;
     text-align: center;
+}
+
+@media screen and (max-width:336px) {
+    button{
+        border: 1px solid black;
+    }   
+    .keys{
+        width: 60px;
+    }
+    #zero{
+        width: 125px;
+    }
+}
+
+@media screen and (max-width:276px) {
+    button{
+        border: 1px solid black;
+    }   
+    .keys{
+        height: 90%;
+        width: 55px;
+    }
+    #zero{
+        width: 115px;
+    }
 }
