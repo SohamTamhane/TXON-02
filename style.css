@@ -36,7 +36,7 @@ button{
 
 .calculator-body{
     background-color: black;
-    width: 300px;
+    width: 312px;
     height: 520px;
     border-radius: 20px;
     /* border: 2px solid white; */
@@ -85,7 +85,7 @@ button{
     height: 70px;
 }
 .keys{
-    display: inline-grid;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 70px;
